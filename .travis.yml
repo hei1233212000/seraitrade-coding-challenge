@@ -12,9 +12,9 @@ matrix:
     - language: node_js
       node_js:
         - "stable"
+      before_install:
+        - cd phone-number-validator
       install:
         - yarn install --frozen-lockfile
-      before_script:
-        - cd phone-number-validator
       script:
         - yarn test:ci
