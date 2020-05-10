@@ -1,0 +1,20 @@
+matrix:
+  include:
+    - language: java
+      jdk:
+        - openjdk11
+      before_install:
+        - cd credit-assessment-calculator
+        - chmod +x mvnw
+        - chmod +x .mvn/wrapper/maven-wrapper.jar
+      script:
+        - ./mvnw clean package
+    - language: node_js
+      node_js:
+        - "stable"
+      install:
+        - yarn install --frozen-lockfile
+      before_script:
+        - cd phone-number-validator
+      script:
+        - yarn test:ci
