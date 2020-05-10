@@ -1,3 +1,6 @@
+=== Project Status
+image:https://travis-ci.com/hei1233212000/seraitrade-coding-challenge.svg?branch=master["Build Status", link="https://travis-ci.com/hei1233212000/seraitrade-coding-challenge"]
+
 === PART A
 ==== Expected Approach
 Behavioral driven development
