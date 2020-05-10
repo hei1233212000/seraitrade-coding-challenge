@@ -1,0 +1,99 @@
+=== PART A
+==== Expected Approach
+Behavioral driven development
+
+==== Business Requirement:
+Write a simple, readable, maintainable, production ready and fully tested credit assessment calculator API in Rest API and expose *a swagger Open API* with corresponding implemented BDD test cases. Hints, springfox-swagger2 and springfox-swagger-ui will generate the Swagger Open API codes.
+Input parameters and the corresponding scores
+
+|===
+|Attribute |Category |Score
+
+|Company Type
+|Sole proprietorship
+|12
+
+|
+|Limited Liability Company
+|63
+
+|
+|Partnership
+|75
+
+|
+|Others
+|0
+
+|Number of Employees
+|1 to 5
+|0
+
+|
+|6 to 10
+|20
+
+|
+|11 to 15
+|32
+
+|
+|15 to 20
+|55
+
+|
+|20+
+|70
+
+|Time in Business
+|0-3 years
+|0
+
+|
+|4-9 years
+|28
+
+|
+|10-15 years
+|36
+
+|
+|16+ years
+|59
+
+|===
+
+We just want to sum all the scores together based on the various inputs in this exercise because we don't want to complicate the requirement. No special logic. If there are any assumptions, please document in the Readme.md.
+
+==== Sample Gherkins feature file
+Please see the attached file and specify all the possible scenarios that you can think of in the feature file.
+
+==== Technical requirements
+1. Write the program in a maven (i.e. with standard pom.xml) spring boot application
+2. Implement with Java 11 (please specify if you use other Java version)
+3. Docker containerized build (i.e. with standard Dockerfile). Hints, you can use FROM openjdk:11-jre
+4. Write the test cases with *Cucumber* Runner. Hints, you can use cucumber-java, cucumber-junit and @RunWith(Cucumber.class). All test cases should be written by you and you should pass all the automated test cases.
+5. Write the test steps with simple RestAPI call simulating how front end or users consume the API. Hints, use TestRestTemplate from the Spring framework will do.
+6. Implement a *Rest API endpoint* to expose the service interface. Hints, use @RestController
+@PostMapping("/calculateCreditScore")
+public Integer calculateCreditScore(@RequestBody CreditScoreInputs creditScoreInputs) {
+...
+}
+7. Implement a proper *Service* class with proper dependency injection pattern (i.e. Do not write all your code within the RestController. The actual logic should be encapsulated in the Service class. e.g. CreditCalculationService).
+8. *Simplicity* is one of our company core values. Don't complicate things and implement the simplest possible way to meet the requirements.
+
+=== PART B
+
+==== User Stories
+1. As a user, I want a form with a text box that lets me enter a phone number when upon clicking the “validate” button it will be validated with a 3rd party service.
+2. As a user, I want the phone number validator to keep a history of the numbers validated until I refresh the page.
+3. As a user, I want a dropdown select that lets me pick a previously validated phone number and validate it again. (It is okay to reuse the form as long as when selecting a phone number from the drop-down, the phone number gets put into the text box.)
+4. As a user I want the phone validation result to be displayed in a table format.
+5. As a user, I want the all validation result from the API response to be shown.
+
+==== Requirements
+• *Do this in React*. Feel free to add in things that you think are useful. This problem has a very narrow scope so it is designed to be finished in an hour or two max.
+• It is up to you to determine what extra packages to use and convention you want to set when building things from scratch.
+• For phone number validation service, you can use https://numverify.com. They have a free tier that gives you 100 requests a day and should be enough for this exercise.
+• For the UI, you can use some form of CSS framework, up to you decide and justify your choices. Remember, you don’t need to do any UI customization, just use things out of the box.
+• Target latest version of Chrome/Edge/Safari/Firefox. You don’t have to do them all, pick one.

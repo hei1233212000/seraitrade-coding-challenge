@@ -1,0 +1,38 @@
+== Credit assessment calculator
+
+=== Prerequisite
+JDK 11+
+
+=== Project Requirements
+Please check the
+link:../README.adoc[Top level README (Part A)]
+
+=== How to package the project?
+`+./mvnw clean package+`
+
+Then you could run
+`+java -jar ./target/credit-assessment-calculator.jar+`
+
+and go to http://localhost:8080/swagger-ui.html
+
+=== How to run the application without packaging the project?
+`+./mvnw spring-boot:run+`
+
+Then go to http://localhost:8080/swagger-ui.html
+
+=== How to view the test reports?
+Run
+`+./mvnw clean verify+`
+
+Then check
+link:./target/site/jacoco/index.html[coverage report]
+and
+link:./target/site/surefire-report.html[test report]
+
+=== Evidence of OpenApi is working
+Please check
+link:./src/test/java/seraitrade/credit_assessment_calculator/test/acceptance/OpenApiAcceptanceTest.java[OpenApiAcceptanceTest.java]
+
+=== Evidence of project is dockerized
+Please check
+link:./src/test/java/seraitrade/credit_assessment_calculator/test/acceptance/OpenApiAcceptanceTest.java[RunInDockerAcceptanceTest.java]

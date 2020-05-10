@@ -1,0 +1,60 @@
+== Phone number validator
+
+=== Prerequisites
+* NodeJS
+
+=== Project Requirements
+Please check the
+link:../README.adoc[Top level README (Part B)]
+
+=== Install
+`+yarn install --frozen-lockfile+`
+
+=== Start for development
+`+yarn start:dev+`
+
+Runs the app in the development mode. Open http://localhost:3000 to view
+it in the browser.
+
+The page will reload if you make edits. You will also see any lint
+errors in the console.
+
+=== Test the project
+`+yarn test+`
+
+Launches the test runner in the interactive watch mode. See the section
+about
+https://facebook.github.io/create-react-app/docs/running-tests[running
+tests] for more information.
+
+=== Test the project on CI
+`+yarn test:ci+`
+
+It will force to test all test cases and then quit once completed
+
+=== Build the production bundle
+`+yarn build+`
+
+Builds the app for production to the `+build+` folder. It correctly
+bundles React in production mode and optimizes the build for the best
+performance.
+
+The build is minified and the filenames include the hashes. Your app is
+ready to be deployed!
+
+See the section about
+https://facebook.github.io/create-react-app/docs/deployment[deployment]
+for more information.
+
+=== run the production bundle
+`+start:prod+`
+
+You have to build the production bundle first
+
+=== Remarks
+* Use React Hook to manage state instead of Redux as it is more lightweight
+* No performance tuning yet
+* https://www.primefaces.org/primereact/[PrimeReact] (3rd party component library) is used as it provides rich components and good layout out
+* You have to add the numverify access key in .env (e.g.: REACT_APP_NUMVERIFY_ACCESS_KEY=xyz)
+* we shall secure our access key (e.g: secure-env)
+* In Front end development, Higher level test is more valuable than unit tests (but we shall add more unit test in custom hooks)
